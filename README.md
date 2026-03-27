@@ -1,16 +1,44 @@
-# smart_shopping_fe
+# 🛍️ Smart Shopping Flutter App
 
-A new Flutter project.
+A mobile application built with Flutter that helps users discover nearby markets and offers based on their location.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+* 📍 Location-based market discovery
+* 🔥 View latest offers and discounts
+* 🏪 Browse markets and products
+* ❤️ Save favorite items
+* 🔍 Search functionality
+* 🔔 Notifications support
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🧠 How It Works
+
+The app retrieves the user's location, sends it to a remote API, and displays nearby markets and offers dynamically.
+
+---
+
+## ⚙️ Tech Stack
+
+* Flutter (Frontend)
+* REST API (Backend communication)
+* Firebase (Notifications & services)
+* Local Storage
+
+---
+
+## ▶️ Run the Project
+
+```bash
+flutter pub get
+flutter run
+```
+
+---
+
+## 👨‍💻 Author
+
+Zeyad Alameri
