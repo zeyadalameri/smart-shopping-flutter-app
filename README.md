@@ -9,7 +9,7 @@ This project was developed as my undergraduate graduation project and received *
 ## Key Features
 
 - Location-based discovery of nearby markets and offers
-- Implemented location-based algorithms to filter nearby markets and offers based on user position
+- Location-based filtering algorithm for nearby market search
 - Market and product browsing
 - Offer and discount display
 - User-friendly mobile shopping flow
@@ -26,6 +26,10 @@ This project was developed as my undergraduate graduation project and received *
 - **Location:** Location-based services
 - **Tools:** Git, GitHub, VS Code / Android Studio
 
+## Location-Based Filtering Algorithm
+
+The app obtains the user's current latitude and longitude through location services. It then compares the user's coordinates with stored market coordinates and calculates the approximate distance between them. Based on a predefined distance range, the app filters out far markets and prioritizes nearby markets and offers, helping users see more relevant shopping options first.
+
 ## Architecture Overview
 
 The app follows a mobile client architecture where the Flutter application communicates with backend services through REST APIs and uses Firebase services for supporting app functionality.
@@ -34,6 +38,7 @@ The app follows a mobile client architecture where the Flutter application commu
 User Mobile App
    ├── UI Screens
    ├── Location Services
+   ├── Location-Based Filtering Algorithm
    ├── Firebase Services
    └── REST API Integration
           └── Markets / Offers / Shopping Data
@@ -46,6 +51,13 @@ User Mobile App
 - Integrated Firebase services and REST API communication
 - Implemented location-based filtering for nearby markets and offers
 - Prepared the project as an academic graduation project
+
+## Screenshots
+
+> More application interface screenshots can be added here.
+
+### Location / Map Interface
+![Location Map](assets/images/map.jpg)
 
 ## Academic Relevance
 
@@ -80,6 +92,6 @@ Some environment-specific configuration files may need to be adjusted before run
 
 ## Author
 
-**Zeyad Alameri**  
+**Zeyad Al-Ameri**  
 Information Technology Graduate | Full-Stack Developer  
 GitHub: [@zeyadalameri](https://github.com/zeyadalameri)
