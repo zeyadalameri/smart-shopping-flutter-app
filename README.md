@@ -1,97 +1,76 @@
 # Smart Shopping App
 
-A Flutter-based graduation project developed as part of the Bachelor of Information Technology at Sana'a University. The application helps users discover nearby markets and offers using location-based services and a mobile-first shopping experience.
+Smart Shopping is a Flutter graduation project that helps users discover nearby markets and browse available offers through a location-aware mobile interface. The project received **94/100** in both graduation-project evaluations at Sana'a University.
 
-## Project Context
+## Overview
 
-This project was developed as my undergraduate graduation project and received **94/100** in both Graduation Project (1) and Graduation Project (2). It demonstrates applied skills in mobile development, REST API integration, Firebase services, and location-aware application design.
+This repository contains the Flutter client. It connects to an external REST API for authentication, market, product, offer, and location data; the backend source is not included here.
 
 ## Key Features
 
-- Location-based discovery of nearby markets and offers
-- Location-based filtering algorithm for nearby market search
-- Market and product browsing
-- Offer and discount display
-- User-friendly mobile shopping flow
-- Firebase integration for app services
-- REST API communication
-- Local/mobile data handling
-- Structured Flutter project architecture
+- Account registration and authentication
+- Nearby-market discovery using the device location and API radius queries
+- Market, category, product, and offer browsing
+- Google Maps integration and location permissions
+- Local favourites stored with SharedPreferences
+- Arabic and English interfaces
+- Light and dark themes
+- Firebase Cloud Messaging and local-notification integration
+- GetX-based navigation, dependency injection, and state management
 
 ## Tech Stack
 
-- **Mobile:** Flutter, Dart
-- **Backend communication:** REST APIs
-- **Cloud/services:** Firebase
-- **Location:** Location-based services
-- **Tools:** Git, GitHub, VS Code / Android Studio
+- Flutter and Dart
+- GetX
+- REST APIs with the `http` package
+- Geolocator and Google Maps
+- Firebase Messaging and Flutter Local Notifications
+- SharedPreferences
 
-## Location-Based Filtering Algorithm
+## Architecture
 
-The app obtains the user's current latitude and longitude through location services. It then compares the user's coordinates with stored market coordinates and calculates the approximate distance between them. Based on a predefined distance range, the app filters out far markets and prioritizes nearby markets and offers, helping users see more relevant shopping options first.
-
-## Architecture Overview
-
-The app follows a mobile client architecture where the Flutter application communicates with backend services through REST APIs and uses Firebase services for supporting app functionality.
-
-```text
-User Mobile App
-   ├── UI Screens
-   ├── Location Services
-   ├── Location-Based Filtering Algorithm
-   ├── Firebase Services
-   └── REST API Integration
-          └── Markets / Offers / Shopping Data
-```
-
-## My Role
-
-- Designed and implemented the mobile application workflow
-- Built the Flutter user interface and shopping screens
-- Integrated Firebase services and REST API communication
-- Implemented location-based filtering for nearby markets and offers
-- Prepared the project as an academic graduation project
-
-## Screenshots
-
-> More application interface screenshots can be added here.
-
-### Location / Map Interface
-![Location Map](assets/images/map.jpg)
-
-## Academic Relevance
-
-This project is relevant to master's applications in Computer Science, Software Engineering, Applied Computer Science, and Mobile Computing because it combines:
-
-- Requirements analysis
-- Mobile software engineering
-- API-based system integration
-- Location-aware computing
-- Algorithmic filtering based on user location
-- Database-backed application workflows
-- Practical problem solving
-
-## What I Learned
-
-- Designing a mobile application around real user needs
-- Integrating Flutter with APIs and Firebase services
-- Applying location-based logic to improve result relevance
-- Structuring a graduation project for academic evaluation
-- Building a complete mobile workflow from concept to implementation
+The code is grouped into reusable core services and feature modules containing controllers, data sources, models, bindings, and views. The Flutter client sends the user's coordinates and search radius to the external API; distance calculation and market selection are not implemented locally in this repository.
 
 ## Getting Started
 
+1. Install a compatible Flutter SDK.
+2. Install packages:
+
 ```bash
 flutter pub get
+```
+
+3. Create `android/local.properties` and add a restricted Google Maps key:
+
+```properties
+GOOGLE_MAPS_API_KEY=your_restricted_key
+```
+
+4. Review the tracked `lib/firebase_options.dart` FlutterFire configuration. These values are standard public client identifiers, not server credentials, but their API keys should still be restricted to the intended Firebase services and application identifiers.
+5. Start the application:
+
+```bash
 flutter run
 ```
 
-## Notes
+The Google Maps credential in `android/local.properties` must remain untracked and restricted to the Android application. The public API endpoint is configured in the application constants and may require replacement if the original service is unavailable.
 
-Some environment-specific configuration files may need to be adjusted before running the project locally, especially Firebase and API endpoint settings.
+## My Role
 
-## Author
+I developed the cross-platform mobile client as part of my Information Technology graduation project, covering application structure, REST integration, location features, maps, notifications, localisation, themes, and local persistence.
 
-**Zeyad Al-Ameri**  
-Information Technology Graduate | Full-Stack Developer  
-GitHub: [@zeyadalameri](https://github.com/zeyadalameri)
+## Skills Demonstrated
+
+Flutter application architecture, REST API integration, state management, geolocation, map integration, push notifications, localisation, and mobile UI development.
+
+## Project Status and Limitations
+
+- Academic graduation project; not a production service
+- Backend implementation and deployment are outside this repository
+- The configured external API may not remain publicly available
+- Maps and Firebase require developer-owned, restricted credentials
+- No checkout or payment workflow is implemented in this client
+
+## License
+
+No open-source license has been declared.
